@@ -80,7 +80,7 @@ export default function Card(){
 
                 <div className={frontFace}>
                     <p className={styleText}>{text}</p>
-                    <img className={classImage} onClick={classImage === 'arrow' ? openCard: openZap} src={image} alt="Seta" />
+                    <img className={classImage} onClick={classImage === 'arrow' || classImage === 'arrowSpin' ? classImage === 'arrow' ? openCard:openZap : ''} src={image} alt="Seta" />
                 </div>  
 
                 <div className={backFace}>
