@@ -1,8 +1,7 @@
-export default function Welcome(){
+export default function WelcomeScreen(){
     return (
-        <div className="welcome">
+        <div className="welcomeScreen">
             <img src="./image/logo-grande.png" alt="Zap Logo" />
-            {/* <div className="logo-recall-welcome"></div> */}
             <h1>ZapRecall</h1>
             <button className="btn-init-recall">Iniciar Recall!</button>
         </div>

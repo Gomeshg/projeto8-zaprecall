@@ -1,9 +1,11 @@
-import Welcome from './Welcome'
+import WelcomeScreen from './WelcomeScreen'
+import GameScreen from './GameScreen';
 
 export default function App(){
     return (
         <>
-            <Welcome/>
+            {/* <WelcomeScreen/> */}
+            <GameScreen />
         </>
     );
 }
