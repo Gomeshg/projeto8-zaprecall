@@ -81,6 +81,22 @@ h1{
     bottom: 0;
     left: 0;
 
+    transition: 1s ease all;
+}
+
+.endGame{
+    height: 171px !important;
+}
+
+.feedbackGame-middle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.feedbackGame-end{
     display: flex;
     flex-direction: column;
     justify-content: center;

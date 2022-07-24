@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Card({feedbackList, setFeedbackList, card, index}){
+export default function Card({feedbackList, setFeedbackList, card, index, tamanhoDeck, setClassFeedbackGame, setIsWinner}){
 
     // LOGIC
     const [text, setText] = React.useState(`Pergunta ${index}`); 
@@ -41,6 +41,8 @@ export default function Card({feedbackList, setFeedbackList, card, index}){
 
         const newFeedback = [...feedbackList, './image/zap.png']
         setFeedbackList(newFeedback)
+
+        completionCondition(feedbackList, tamanhoDeck)
     }
     function almostForgot(){
         rotateFrontFace('cardHidden face')
@@ -55,6 +57,9 @@ export default function Card({feedbackList, setFeedbackList, card, index}){
 
         const newFeedback = [...feedbackList, './image/almostForgot.png']
         setFeedbackList(newFeedback)
+
+        completionCondition(feedbackList, tamanhoDeck)
+
     }
     function forgot(){
         rotateFrontFace('cardHidden face')
@@ -69,8 +74,17 @@ export default function Card({feedbackList, setFeedbackList, card, index}){
 
         const newFeedback = [...feedbackList, './image/forgot.png']
         setFeedbackList(newFeedback)
+        setIsWinner(false)
+
+        completionCondition(feedbackList, tamanhoDeck)
     }
 
+    function completionCondition(feedbackList, tamanhoDeck){
+
+        if(feedbackList.length === tamanhoDeck-1){
+            setClassFeedbackGame('feedbackGame endGame')
+        }
+    }
 
     // LAYOUT
 
