@@ -4,21 +4,26 @@ export default function WelcomeScreen({layoutWelcome, setLayoutWelcome, setLayou
 
     function changeLayout(){
         setLayoutWelcome('invisible')
-        setLayoutGame('gameScreen')
+        setLayoutGame('gameScreen')        
     }
 
+    const [btnDisabled, setBtnDisabled] = React.useState(true);
 
+    function setValueOnChange(e){
+        setDeckValue(parseInt(e.target.value))
+        setBtnDisabled(false)
+    }
     return (
         <div className={layoutWelcome}>
             <img src="./image/logo-grande.png" alt="Zap Logo" />
             <h1>ZapRecall</h1>
-            <select name="selected" id="selected" onChange={ e => setDeckValue(parseInt(e.target.value))}>
+            <select name="selected" id="selected" onChange={ e => setValueOnChange(e) }>
                 <option disabled selected>Escolha o seu deck</option>
                 <option value="0">React</option>
                 <option value="1">Clã Uchiha</option>
                 <option value="2">Inglês</option>
             </select>
-            <button onClick={changeLayout} className="btn-init-recall">Iniciar Recall!</button>
+            <button disabled={btnDisabled} onClick={changeLayout} className="btn-init-recall">Iniciar Recall!</button>
         </div>
     );
 }
