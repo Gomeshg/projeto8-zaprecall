@@ -81,7 +81,11 @@ h1{
     bottom: 0;
     left: 0;
 
-    transition: 1s ease all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.3s ease-in-out all;
 }
 
 .endGame{
@@ -93,7 +97,6 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    justify-content: center;
     gap: 10px;
 }
 .feedbackGame-end{
@@ -101,9 +104,26 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    justify-content: center;
     gap: 10px;
 }
+.feedbackGame-end div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.feedbackGame-end img{
+    width: 23px;
+    height: 23px;
+}
+.feedbackGame-end h3{
+    font-family: 'Recursive';
+    font-size: 18px;
+    font-weight: 700;
+    color:rgba(51, 51, 51, 1);
+}
+
 
 .iconFeedbackGame{
     display:flex;
@@ -115,7 +135,7 @@ h1{
     font-family: 'Recursive';
     font-weight: 400;
     font-size: 18px;
-    color: #333333;
+    color:rgba(51, 51, 51, 1);
 }
 
 

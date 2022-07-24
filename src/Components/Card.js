@@ -32,7 +32,7 @@ export default function Card({feedbackList, setFeedbackList, card, index, tamanh
         rotateFrontFace('cardHidden face')
         rotateBackFace('cardAnswer back-face face')
 
-        setText('Pergunta 1')
+        setText(`Pergunta ${index}`)
         setImage('./image/zap.png')
         setClassImage('iconFeedback')
         setClassCard('card')
@@ -48,7 +48,7 @@ export default function Card({feedbackList, setFeedbackList, card, index, tamanh
         rotateFrontFace('cardHidden face')
         rotateBackFace('cardAnswer back-face face')
 
-        setText('Pergunta 1')
+        setText(`Pergunta ${index}`)
         setImage('./image/almostForgot.png')
         setClassImage('iconFeedback')
         setClassCard('card')
@@ -65,7 +65,7 @@ export default function Card({feedbackList, setFeedbackList, card, index, tamanh
         rotateFrontFace('cardHidden face')
         rotateBackFace('cardAnswer back-face face')
 
-        setText('Pergunta 1')
+        setText(`Pergunta ${index}`)
         setImage('./image/forgot.png')
         setClassImage('iconFeedback')
         setClassCard('card')
@@ -78,7 +78,6 @@ export default function Card({feedbackList, setFeedbackList, card, index, tamanh
 
         completionCondition(feedbackList, tamanhoDeck)
     }
-
     function completionCondition(feedbackList, tamanhoDeck){
 
         if(feedbackList.length === tamanhoDeck-1){

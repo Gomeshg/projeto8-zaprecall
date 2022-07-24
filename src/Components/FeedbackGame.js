@@ -2,10 +2,6 @@ import React from 'react';
 
 export default function FeedbackGame({feedbackList, deck, classFeedbackGame, isWinner}){
 
-    // const [result, setResult] = React.useState('');
-    // const [iconResult, setIconResult] = React.useState('');
-    // const [textResult, setTextResult] = React.useState('');
-
     const iconWinner = './image/party.png';
     const iconLoser = './image/sad.png';
     const titleResultWinner = 'Parabéns!'
