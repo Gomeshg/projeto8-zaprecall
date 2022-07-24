@@ -26,6 +26,7 @@ h1{
 .btn-init-recall{
     width: 246px;
     height: 54px;
+    background-color: white;
 
     font-family: 'Recursive';
     font-weight: 400;
@@ -199,7 +200,7 @@ h1{
 
 .cardAnswer p, .cardQuestion p {
     font-size: 18px;
-    word-break: break-all
+    word-break: break-word
 }
 
 
@@ -311,4 +312,19 @@ h1{
 .iconFeedback{
     width: 23px;
     height: 23px;
+}
+
+
+#selected{
+    height: 43px;
+    width: 246px;
+    padding-left: 5px;
+    border-radius: 5px;
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(173, 173, 173, 1);
+    border: none;
+    outline: none;
+    background-color: white;
 }
