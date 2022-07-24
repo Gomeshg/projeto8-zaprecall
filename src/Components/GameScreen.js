@@ -4,7 +4,7 @@ import FeedbackGame from './FeedbackGame';
 
 import React from 'react';
 
-export default function GameScreen({layoutGame, deckValue}){
+export default function GameScreen({layoutGame, deckValue, setLayoutWelcome, setLayoutGame}){
     
     let deck = [
         [
@@ -73,7 +73,7 @@ export default function GameScreen({layoutGame, deckValue}){
             {
                 question:'Qual uchiha matou danzou?',
                 answer:'Sasuke'
-            },
+            }
         ],
         [
             {
@@ -132,7 +132,7 @@ export default function GameScreen({layoutGame, deckValue}){
         <div className={layoutGame}>
             <Header/>
             <Cards feedbackList={feedbackList} setFeedbackList={setFeedbackList} deck={deck} setClassFeedbackGame={setClassFeedbackGame} setIsWinner={setIsWinner}/>
-            <FeedbackGame feedbackList={feedbackList} deck={deck} classFeedbackGame={classFeedbackGame} isWinner={isWinner}/>        
+            <FeedbackGame feedbackList={feedbackList} deck={deck} classFeedbackGame={classFeedbackGame} isWinner={isWinner} setLayoutWelcome={setLayoutWelcome} setLayoutGame={setLayoutGame}/>        
         </div>
     );
 }

@@ -12,7 +12,7 @@ export default function Screen(){
     return (
         <>
             <WelcomeScreen layoutWelcome={layoutWelcome} setLayoutWelcome={setLayoutWelcome} setLayoutGame={setLayoutGame} setDeckValue={setDeckValue} />
-            <GameScreen layoutGame={layoutGame} deckValue={deckValue}/>
+            <GameScreen layoutGame={layoutGame} deckValue={deckValue} setLayoutWelcome={setLayoutWelcome} setLayoutGame={setLayoutGame}/>
         </>
     );
 }

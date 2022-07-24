@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function FeedbackGame({feedbackList, deck, classFeedbackGame, isWinner}){
+export default function FeedbackGame({feedbackList, deck, classFeedbackGame, isWinner, setLayoutWelcome, setLayoutGame}){
 
     const iconWinner = './image/party.png';
     const iconLoser = './image/sad.png';
@@ -8,6 +8,12 @@ export default function FeedbackGame({feedbackList, deck, classFeedbackGame, isW
     const titleResultLoser = 'Putz...'
     const textResultWinner = 'Você não esqueceu de nenhum flashcard!'
     const textResultLoser = 'Ainda faltam alguns...Mas não desanime!'
+
+    function refreshPage(){
+        window.location.reload();
+        // setLayoutWelcome('welcomeScreen') 
+        // setLayoutGame('invisible')
+    }
 
     return (
         <div className={classFeedbackGame}>
@@ -39,6 +45,10 @@ export default function FeedbackGame({feedbackList, deck, classFeedbackGame, isW
                 <div className="iconFeedbackGame">
                     {feedbackList.map(item => <img src={item}></img>)}
                 </div>
+
+                
+                <button onClick={refreshPage} className="btn-reload">REINICIAR RECALL</button>
+                
             </div>
             }
            

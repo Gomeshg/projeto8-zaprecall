@@ -90,7 +90,7 @@ h1{
 }
 
 .endGame{
-    height: 171px !important;
+    height: 244px !important;
 }
 
 .feedbackGame-middle{
@@ -327,4 +327,19 @@ h1{
     border: none;
     outline: none;
     background-color: white;
+}
+
+.btn-reload{
+    background-color:rgba(251, 107, 107, 1);
+    height: 32px;
+    width: 167px;
+    border-radius: 5px;
+
+    font-family: 'Recursive';
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+
+    border: none;
 }
