@@ -1,39 +1,33 @@
 import React from 'react';
 
-export default function Card(){
+export default function Card({feedbackList, setFeedbackList, card, index}){
 
     // LOGIC
-
-
-    const [text, setText] = React.useState('Pergunta 1'); 
+    const [text, setText] = React.useState(`Pergunta ${index}`); 
+    const [styleText, setStyleText] = React.useState('');
     const [image, setImage] = React.useState('./image/arrow.png')
     const [classCard, setClassCard] = React.useState('card')
     const [classImage, setClassImage] = React.useState('arrow')
 
-
     const[frontFace, rotateFrontFace] = React.useState('cardHidden face')
     const[backFace, rotateBackFace] = React.useState('cardAnswer back-face face')
 
-    const [styleText, setStyleText] = React.useState('');
-
-
+     
     function openCard(){
         
         if(classImage === 'arrow'){
-            setText('O que é JSX?')
+            setText(card.question)
             setImage('./image/arrowSpin.png')
             setClassImage('arrowSpin')
             setClassCard('card-update')
             rotateFrontFace('cardQuestion face')
         }
     }
-    
     function openZap(){
         
         rotateFrontFace('cardQuestion rotate-front-face face')
         rotateBackFace('cardAnswer rotate-back-face face')
     }
-
     function zap(){
         rotateFrontFace('cardHidden face')
         rotateBackFace('cardAnswer back-face face')
@@ -44,8 +38,10 @@ export default function Card(){
         setClassCard('card')
 
         setStyleText('styleTextZap')
-    }
 
+        const newFeedback = [...feedbackList, './image/zap.png']
+        setFeedbackList(newFeedback)
+    }
     function almostForgot(){
         rotateFrontFace('cardHidden face')
         rotateBackFace('cardAnswer back-face face')
@@ -56,8 +52,10 @@ export default function Card(){
         setClassCard('card')
 
         setStyleText('styleTextAlmostForgot')
-    }
 
+        const newFeedback = [...feedbackList, './image/almostForgot.png']
+        setFeedbackList(newFeedback)
+    }
     function forgot(){
         rotateFrontFace('cardHidden face')
         rotateBackFace('cardAnswer back-face face')
@@ -68,6 +66,9 @@ export default function Card(){
         setClassCard('card')
 
         setStyleText('styleTextForgot')
+
+        const newFeedback = [...feedbackList, './image/forgot.png']
+        setFeedbackList(newFeedback)
     }
 
 
@@ -84,7 +85,7 @@ export default function Card(){
                 </div>  
 
                 <div className={backFace}>
-                    <p>O JSX é uma sintaxe para escrever HTML dentro do JS</p>
+                    <p>{card.answer}</p>
                     <div className="btn-container">
                         <button onClick={forgot} className="btn btn-forgot">Não lembrei</button>
                         <button onClick={almostForgot} className="btn btn-almostForgot">Quase não lembrei</button>

@@ -1,20 +1,12 @@
 import Card from "./Card";
 
-export default function Cards(){
+export default function Cards({feedbackList, setFeedbackList, deck}){
+
+
 
     return (
         <div className="cards">
-
-            {/* cards.map(card => <Card props props props/>) */}
-
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-
-        
+            {deck.map((card, index) => <Card feedbackList={feedbackList} setFeedbackList={setFeedbackList} card={card} index={index+1}/> )}
         </div>
     );
 }

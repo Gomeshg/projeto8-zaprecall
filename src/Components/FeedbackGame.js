@@ -1,10 +1,15 @@
-export default function FeedbackGame(){
+export default function FeedbackGame({feedbackList, deck}){
 
     return (
         <div className="feedbackGame">
+            <div>
+                <p>{feedbackList.length}/{deck.length} CONCLUÍDOS</p>
+            </div>
 
-            <p>0/4 CONCLUÍDOS</p>
-        
+            <div className="iconFeedbackGame">
+                {feedbackList.map(item => <img src={item}></img>)}
+            </div>
+
         </div>
     );
 }
