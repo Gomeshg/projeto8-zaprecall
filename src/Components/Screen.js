@@ -4,7 +4,6 @@ import GameScreen from './GameScreen';
 
 export default function Screen(){
 
-    // ESSA LINHA TÁ DANDO PROBLEMA
     const [layoutGame, setLayoutGame] = React.useState('invisible')
     const [layoutWelcome, setLayoutWelcome] = React.useState('welcomeScreen');
 

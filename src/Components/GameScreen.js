@@ -5,12 +5,8 @@ import FeedbackGame from './FeedbackGame';
 import React from 'react';
 
 export default function GameScreen({layoutGame}){
-
-    const [feedbackList, setFeedbackList] = React.useState([]);
-    const [classFeedbackGame, setClassFeedbackGame] = React.useState('feedbackGame');
-    const [isWinner, setIsWinner] = React.useState(true);
-
-    const deck = [
+    
+    let deck = [
         {
             question: 'O que é JSX?',
             answer: 'Uma extensão de linguagem do JavaScript'
@@ -45,6 +41,26 @@ export default function GameScreen({layoutGame}){
         }
     ]
 
+    deck = [...shuffleArray(deck)]
+
+    const [feedbackList, setFeedbackList] = React.useState([]);
+    const [classFeedbackGame, setClassFeedbackGame] = React.useState('feedbackGame');
+    const [isWinner, setIsWinner] = React.useState(true);
+    // const [deck, shuffleDeck] = React.useState(deck__)
+
+    
+
+    // shuffleDeck([...shuffleArray(deck__)])
+
+    
+    function shuffleArray(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+    }
+    
     
 
     return (
